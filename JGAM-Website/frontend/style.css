@@ -179,3 +179,54 @@ h4.schedule-day-heading {
 
 /* 12. Footer */
 footer.bg-signature-blue-dark { background-color: var(--signature-blue-dark); }
+
+/* 13. Responsive Media Queries */
+
+/* For Tablets (screens smaller than 1024px) */
+@media (max-width: 1023px) {
+    .signature-heading-main {
+        font-size: 3rem; /* Reduce main heading size */
+    }
+
+    #contribution-bands .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    #contribute .grid {
+        grid-template-columns: 1fr; /* Stack bank details boxes */
+    }
+}
+
+
+/* For Mobile Phones (screens smaller than 767px) */
+@media (max-width: 767px) {
+    /* Hide the main navigation links */
+    header nav .hidden {
+        display: none;
+    }
+
+    .hero-logo {
+        height: 50px; /* Make hero logos smaller */
+    }
+
+    .signature-heading-main {
+        font-size: 2.25rem; /* Further reduce main heading */
+        line-height: 1.2;
+    }
+
+    #schedule .grid {
+        grid-template-columns: 1fr; /* Stack schedule days */
+    }
+
+    #highlights .grid {
+        grid-template-columns: 1fr; /* Stack highlight cards */
+    }
+    
+    #contribution-bands .grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    #gallery-grid {
+        grid-template-columns: 1fr; /* 1 gallery item per row */
+    }
+}

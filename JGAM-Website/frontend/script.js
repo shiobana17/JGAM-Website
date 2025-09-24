@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (galleryGrid && loadingMessage) {
         const loadGalleryWithRetries = async (retries = 3, delay = 2000) => {
             try {
-                const response = await fetch('http://127.0.0.1:5000/api/gallery');
+                const response = await fetch('https://jgam-api.onrender.com/api/gallery');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
