@@ -126,7 +126,7 @@ h4.schedule-day-heading {
 /* 9. Contribution Bands */
 #contribution-bands .contribution-card {background-color: rgba(245, 225, 195, 0.97)};
 .contribution-card { border-top: 8px solid; transition: transform 0.3s, box-shadow 0.3s; }
-.contribution-card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+.contribution-card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
 #diamond-card { border-color: #b9f2ff; }
 #platinum-card { border-color: #e5e4e2; }
 #gold-card { border-color: #ffd700; }
@@ -229,4 +229,13 @@ footer.bg-signature-blue-dark { background-color: var(--signature-blue-dark); }
     #gallery-grid {
         grid-template-columns: 1fr; /* 1 gallery item per row */
     }
+}
+
+/* 14. Reusable Hover Zoom Effect */
+.hover-zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05); /* Adjust the scale value for more or less zoom */
 }

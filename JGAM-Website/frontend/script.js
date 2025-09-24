@@ -26,7 +26,7 @@ function closeLightbox() {
 
 function updateLightboxImage() {
     lightboxImg.src = currentImages[currentIndex];
-    lightboxCaption.textContent = currentCaptions[currentIndex];
+    lightboxCaption.textContent = "";
 }
 
 function showPrev() {
