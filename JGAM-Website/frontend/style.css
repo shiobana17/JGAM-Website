@@ -124,14 +124,24 @@ h4.schedule-day-heading {
 #lightbox-caption { color: white; text-align: center; margin-top: 1rem; }
 
 /* 9. Contribution Bands */
-#contribution-bands .contribution-card {background-color: rgba(245, 225, 195, 0.97)};
-.contribution-card { border-top: 8px solid; transition: transform 0.3s, box-shadow 0.3s; }
-.contribution-card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
-#diamond-card { border-color: #b9f2ff; }
-#platinum-card { border-color: #e5e4e2; }
-#gold-card { border-color: #ffd700; }
-#silver-card { border-color: #c0c0c0; }
-.contribution-amount { font-size: 2rem; font-weight: 700; color: var(--signature-blue); margin-top: 0.5rem; }
+#contribution-bands .contribution-card { 
+    border-top: 8px solid; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+#contribution-bands .contribution-card:hover { 
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); 
+}
+#contribution-bands #diamond-card { border-color: #b9f2ff; }
+#contribution-bands #platinum-card { border-color: #e5e4e2; }
+#contribution-bands #gold-card { border-color: #ffd700; }
+#contribution-bands #silver-card { border-color: #c0c0c0; }
+#contribution-bands .contribution-amount { 
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: var(--signature-blue); 
+    margin-top: 0.5rem; 
+}
 
 /* 10. Contact Section */
 .contact-icon { font-size: 1.5rem; color: var(--signature-blue); width: 2rem; text-align: center; }
