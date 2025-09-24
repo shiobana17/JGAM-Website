@@ -1,0 +1,181 @@
+/* --- SIGNATURE THEME --- */
+
+/* 1. Root Variables */
+:root {
+    --signature-blue: #234C6A;
+    --signature-blue-dark: #1a384f;
+    --signature-dark-text: #423529;
+    --signature-beige: #f5e1c3;
+    --signature-light-text: #f0f0f0;
+    --signature-accent: #d97706;
+    --signature-beige-rgb: 245, 225, 195;
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* 2. General Styles */
+body.signature-theme {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: var(--signature-dark-text);
+    font-family: var(--font-body);
+}
+
+/* 3. Header & Logos */
+.header-logo { height: 50px; }
+.hero-logo { height: 60px; }
+@media (min-width: 768px) { .hero-logo { height: 100px; } }
+@media (min-width: 1024px) { .hero-logo { height: 120px; } }
+header .signature-heading {
+    color: var(--signature-dark-text);
+    text-shadow: none;
+}
+
+/* 4. Headings */
+section .signature-heading {
+    color: var(--signature-light-text);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+h4.signature-heading {
+    color: var(--signature-dark-text);
+    text-shadow: none;
+    font-weight: bold;
+}
+.signature-heading-main {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+h4.schedule-day-heading {
+    color: var(--signature-light-text);
+    border-bottom: 2px solid var(--signature-light-text);
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* 5. Links & Buttons */
+.signature-link {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--signature-dark-text);
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+.signature-link:hover {
+    color: var(--signature-blue);
+    border-color: var(--signature-blue);
+}
+.signature-button {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    background-color: var(--signature-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+.signature-button:hover {
+    background-color: var(--signature-blue-dark);
+}
+
+/* 6. Section Backgrounds & Text */
+.bg-signature-blue { background-color: rgba(35, 76, 106, 0.95); }
+.bg-signature-beige { background-color: rgba(245, 225, 195, 0.97); border: 1px solid rgba(66, 53, 41, 0.1); }
+#about .signature-text { color: var(--signature-light-text); }
+#contribute .signature-text { color: var(--signature-light-text); }
+/* Rule to make text dark ONLY inside the beige bank detail boxes */
+#contribute .bg-signature-beige .signature-text { color: var(--signature-dark-text); }
+
+/* 7. Schedule */
+.schedule-day-subtitle { color: var(--signature-light-text); opacity: 0.8; }
+.schedule-arrow { font-size: 1.25rem; color: var(--signature-accent); padding-top: 0.25rem; }
+.schedule-item-text { background-color: var(--signature-beige); padding: 0.75rem 1rem; border-radius: 0.25rem; box-shadow: 1px 1px 3px rgba(0,0,0,0.1); flex: 1; font-weight: 500; color: var(--signature-dark-text); }
+
+/* 8. Gallery & Lightbox */
+.album-cover { position: relative; cursor: pointer; overflow: hidden; border-radius: 4px; box-shadow: 3px 3px 8px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; }
+.album-cover:hover { transform: scale(1.05); box-shadow: 5px 5px 15px rgba(0,0,0,0.4); }
+.album-cover img { display: block; width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s; }
+.album-cover:hover img { transform: scale(1.1); }
+.album-title { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 1rem; text-align: center; font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 0.05em; transform: translateY(100%); transition: transform 0.3s ease-in-out; }
+.album-cover:hover .album-title { transform: translateY(0); }
+.lightbox-hidden { display: none !important; }
+.lightbox-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 998; }
+.lightbox-content { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    max-width: 90vw; 
+    max-height: 85vh; 
+    z-index: 999; 
+}
+.lightbox-content img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+.lightbox-button { position: absolute; background: rgba(0,0,0,0.5); color: white; border: none; font-size: 2rem; font-weight: bold; cursor: pointer; transition: background 0.3s; padding: 0.5rem 1rem; z-index: 1000; }
+.lightbox-button:hover { background: rgba(0,0,0,0.8); }
+.close-btn { top: -40px; right: 0px; font-size: 2.5rem; padding: 0 1rem; }
+.prev-btn { top: 50%; left: -60px; transform: translateY(-50%); }
+.next-btn { top: 50%; right: -60px; transform: translateY(-50%); }
+#lightbox-caption { color: white; text-align: center; margin-top: 1rem; }
+
+/* 9. Contribution Bands */
+#contribution-bands .contribution-card {background-color: rgba(245, 225, 195, 0.97)};
+.contribution-card { border-top: 8px solid; transition: transform 0.3s, box-shadow 0.3s; }
+.contribution-card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+#diamond-card { border-color: #b9f2ff; }
+#platinum-card { border-color: #e5e4e2; }
+#gold-card { border-color: #ffd700; }
+#silver-card { border-color: #c0c0c0; }
+.contribution-amount { font-size: 2rem; font-weight: 700; color: var(--signature-blue); margin-top: 0.5rem; }
+
+/* 10. Contact Section */
+.contact-icon { font-size: 1.5rem; color: var(--signature-blue); width: 2rem; text-align: center; }
+
+/* 11. Modal Trigger Cards & Info Modal */
+.modal-trigger-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.modal-source-content {
+    display: none; 
+}
+.modal-trigger-icon { font-size: 1.25rem; }
+.modal-hidden { display: none !important; }
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: var(--signature-beige);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    color: var(--signature-dark-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 12. Footer */
+footer.bg-signature-blue-dark { background-color: var(--signature-blue-dark); }
