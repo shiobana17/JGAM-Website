@@ -187,8 +187,38 @@ h4.schedule-day-heading {
     cursor: pointer;
 }
 
+/* In style.css */
+
 /* 12. Footer */
 footer.bg-signature-blue-dark { background-color: var(--signature-blue-dark); }
+
+
+/* NEW FOOTER LOGO SCROLLER */
+.footer-logo-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+}
+
+.logo-track {
+    display: flex;
+    width: calc(200px * 12); /* 200px per logo times 12 logos (6 original + 6 duplicates) */
+    animation: scroll 40s linear infinite;
+}
+
+.footer-logo {
+    height: 60px; /* Adjust height as needed */
+    width: 200px; /* Fixed width for consistent spacing */
+    padding: 0 40px;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 6)); } /* Scroll by the width of the original 6 logos */
+}
 
 /* 13. Responsive Media Queries */
 
